@@ -1,0 +1,15 @@
+version: '3.9'
+services:
+  app:
+    container_name: karla-store-service-registry
+    image: karla-store-service-registry/api:latest
+    environment:
+      - ENVIRONMENT_TYPE=dev
+    ports:
+      - 8761:8761
+    networks:
+      karla-store-network:
+        ipv4_address: 170.0.0.20
+networks:
+  karla-store-network:
+    external: true
